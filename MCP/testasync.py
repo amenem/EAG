@@ -1,4 +1,9 @@
 import asyncio
+import dotenv
+import os
+
+dotenv.load_dotenv()
+gemini_api_key=os.getenv("GEMINI_API_KEY")
 
 async def async_fn(message: str, delay: int)->None:
     """
@@ -18,5 +23,7 @@ async def main():
 
 if __name__=="__main__":
     asyncio.run(main())
+    print(gemini_api_key)
+
 
 
